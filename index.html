@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html ng-app="MonApp">
+<head>
+    <meta charset="utf-8">
+	<title>Angular</title>
+    <script type="text/javascript" src="bower_components/jquery/dist/jquery.js"></script>
+	<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/css/bootstrap.css">
+	<style type="text/css">
+		.ma-class{
+			color:red;
+		}
+	</style>
+</head>
+<body > 
+	<div ng-controller="MonCtrl">   
+			
+			
+	</div>
+	<div ng-controller="SonCtrl">
+	    <h1 >Bonjour {{prenom}}</h1>
+	     {{prenom}}
+	    <input type="text" ng-model="prenom">
+	    <select ng-model="limite">
+	    	<option value="1">1</option>
+	    	<option value="2">2</option>
+	    	<option value="3">3</option>
+	    	<option value="4">4</option>
+	    </select>
+		
+		<ul>
+		<li  ng-repeat=" val in tab |filter:prenom |limitTo:limite"
+		     ng-class="{'ma-class':$index%2}">
+             valeur : {{val}}
+		</li>
+	    </ul>
+	    <button ng-click="action()" class="btn btn-primary" type="submit">say hello !</button>
+	    <div ng-if="carre(2)==3">
+	    	<p>vrai</p>
+	    </div>
+	</div>
+
+	
+	<script  src="bower_components/angular/angular.js"></script>
+	<script  src="app/config/app.js"></script>
+	<script src="app/src/controllers/controller.js" ></script>
+</body>
+</html>
