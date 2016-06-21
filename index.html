@@ -12,9 +12,9 @@
 		}
 	</style>
 </head>
-<body > 
+<body >
+	<ng-view></ng-view> 
 	<div ng-controller="MonCtrl">   
-			
 			
 	</div>
 	<div ng-controller="SonCtrl">
@@ -29,9 +29,9 @@
 	    </select>
 		
 		<ul>
-		<li  ng-repeat=" val in tab |filter:prenom |limitTo:limite"
+		<li  ng-repeat=" val in tab "
 		     ng-class="{'ma-class':$index%2}">
-             valeur : {{val}}
+            ligne : {{key}} - {{$index}} valeur : {{val}}
 		</li>
 	    </ul>
 	    <button ng-click="action()" class="btn btn-primary" type="submit">say hello !</button>
@@ -42,6 +42,7 @@
 
 	
 	<script  src="bower_components/angular/angular.js"></script>
+	<script src="bower_components/angular-route/angular-route.js"></script>
 	<script  src="app/config/app.js"></script>
 	<script src="app/src/controllers/controller.js" ></script>
 </body>
